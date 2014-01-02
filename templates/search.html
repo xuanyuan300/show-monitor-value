@@ -1,0 +1,201 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <title>This is test page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/2.3.2/css/bootstrap.min.css" media="screen">
+    <style type="text/css">
+	body{
+	      background-color: #CCC;
+	      background: url('static/bg.jpg');
+	      padding-top: 6px;
+              padding-bottom: 40px;
+      }
+       .sidebar-nav {
+        padding: 9px 0;
+      }
+       .hero-unit {
+    	padding: 10px;
+    	margin-bottom: 30px;
+      }
+       @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+
+
+  </head>
+<body>
+<div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li><a href="{{url_for('all')}}">ALL</a></li>
+              <li><a href="{{url_for('cc14')}}">cc00014</a></li>
+              <li><a href="{{url_for('cc46')}}">cc00046</a></li>
+              <li><a href="{{url_for('cc69')}}">cc00069</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span8">
+	  <div class="hero-unit">
+	    <h2>Server Group Bandwidth</h2>
+	    <div id="{{sv}}" style='min-width: 400px; height: 400px; margin: 0 auto'></div>
+	    {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+	  </div>
+	</div>
+		
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script  type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+<script  type="text/javascript" src="http://code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript">
+$(function(){
+    getData();
+    setInterval(function(){
+        getData();
+    }, 1000*60);
+});
+function getData(){
+//	var all14d={{newalld|safe}};
+//	var all14={{newall14|safe}};
+//	for (var i=0;i<all14d.length;i++){
+//	    var name=all14d[i];
+//	    var url=all14[name];
+//	    $("<div id='"+name+"' style='min-width: 400px; height: 400px; margin: 0 auto'></div>").appendTo($("#all14"));
+	    
+//            $.getJSON('http://124.95.150.193:21900/Rrd/CNC-SY-3-3Sa/.base-LOCAL_BAND_OUT-.base-LOCAL_BAND_IN/daily',function(data){
+            $.getJSON("{{svurl|safe}}",function (data){  
+            	var outband=data.base.LOCAL_BAND_OUT.val;
+            	var outt=data.base.LOCAL_BAND_OUT.stime;
+            	var inband=data.base.LOCAL_BAND_IN.val;
+            	var intt=data.base.LOCAL_BAND_IN.stime;
+            	var inData = new Array();
+            	var outData = new Array();
+	    	var outte=Number(outt);
+	    	var inte=Number(intt);
+            	for (var ii=0;ii<inband.length;ii++){
+				inData.push(Number(inband[ii]));
+			};
+            	for (var iii=0;iii<outband.length;iii++){
+				outData.push(Number(outband[iii]));
+			}
+
+            	setBandwidthData(inData, outData,inte,outte);
+
+            })
+}
+function setBandwidthData(inData, outData,inte,outte){
+    Highcharts.setOptions({
+        global:{
+            useUTC:false 
+        }
+    });
+    new Highcharts.Chart({
+        colors: ['#2f7ed8', '#FF7F00'],
+	credits: {
+            enabled: false
+        },
+        chart: {
+          //  renderTo: 'CNC-SY-3-3Sa',
+            renderTo: "{{sv|safe}}",
+            zoomType: 'xy',
+//            alignTicks： true,
+//            spacingRight: 20
+        },
+        title: {
+            text: name
+        },
+        xAxis: {
+            type: 'datetime',
+            maxZoom: 1000 * 60, // ten minitues
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            title: {
+                text: '带宽'
+            },
+           // type: 'logarithmic',
+
+            minorTickInterval :  'auto', 
+            enable: true,
+            allowDecimals: true,
+            plotLines: [{
+                 value: 0
+            }],
+            min: 0,
+            labels: {
+       //         enabled: true,
+                formatter: function() {
+                    var mvalue = this.value ;
+                    if (mvalue>=1000000){
+                        mvalue = mvalue/1000/1000 + 'M';
+                    };
+                    if (mvalue<1000000 && mvalue >=1000){
+                        mvalue = mvalue/1000 + 'K';                     			  };
+                    if (mvalue<1000){
+                        mvalue = mvalue + 'B';
+                    };
+                    return mvalue;
+                }
+            }
+        },
+        tooltip: {
+            shared: true
+        },
+        legend: {
+            enabled: true
+        },
+        plotOptions: {
+            series: {
+                lineWidth: 1,
+		 animation: false
+            },
+
+            area: {
+               
+                marker: {
+                    enabled: false,
+                    symbol: 'circle',
+                    radius: 1,
+                    states: {
+                        hover: {
+                            enabled: true
+                        }
+                    }
+                }
+            },
+            line: {
+                marker: {
+                    enabled: false
+                },
+            }
+        },
+
+        series: [{
+                type: 'area',
+                name: '输出带宽',
+                pointInterval: 60 * 1000,
+                pointStart: outte*1000,
+                data: outData
+        },{
+                type: 'line',
+                name: '输入带宽',
+                pointInterval: 60 * 1000,
+                pointStart: inte* 1000,
+                data: inData
+        }]
+    });
+}
+</script>
+</body>
+</html>

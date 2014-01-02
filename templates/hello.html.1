@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <title>This is test page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/2.3.2/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="/static/bootstrap-select.min.css" media="screen">
+    <style type="text/css">
+	body{
+	      background-color: #CCC;
+	      background: url('static/bg.jpg');
+	      padding-top: 6px;
+              padding-bottom: 40px;
+      }
+       .sidebar-nav {
+        padding: 9px 0;
+      }
+       .row-fluid .span2 {
+	width: 8%;
+	height: 10%;
+      }
+       .hero-unit {
+        padding: 10px;
+        margin-bottom: 30px;
+      }
+       .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
+	 margin-right: 10px;
+      }
+       @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+    <script type="text/javascript">
+	function _switch(){    
+    		$(".btn").button('toggle');
+		}
+    </script>
+
+  </head>
+<body>
+<div class="container-fluid">
+      <div class="row-fluid">
+
+        <div class="span12">
+          <div class="hero-unit">      
+	      <form class="form-horizontal well" name="myform" action="{{url_for('showip14',name14=myform)}}" method="POST">
+	      <select class="selectpicker show-tick" multiple data-size="10" data-width="151px" title="14"  data-selected-text-format="count>3">
+	          <option>ALL</option>    	  
+		  {% for ke,v in k.items() %}
+		  <option value="{{ke}}">{{ke}}</option>
+		  {% endfor %}
+	      </select>
+	      </form>
+	      <div class="form-actions">
+	        <button type="submit" class="btn btn-success" onclick="document.myform.submit()">Save changes</button>
+	      </div>
+	      <select class="selectpicker show-tick" multiple data-size="10" data-width="151px" title="46"  data-selected-text-format="count>3">
+	          <option>ALL</option>    	  
+		  {% for ke,v in k46.items() %}
+		  <option>{{ke}}</option>
+		  {% endfor %}
+	      </select>
+	      <select class="selectpicker show-tick" multiple data-size="10" data-width="151px" title="69"  data-selected-text-format="count>3">
+	          <option>ALL</option>    	  
+		  {% for ke,v in k69.items() %}
+		  <option>{{ke}}</option>
+		  {% endfor %}
+	      </select>
+	  </div>
+        </div><!--/span-->
+	<div class="row-fluid">
+	  <div class="span6">
+	  <div class="hero-unit">
+	    <h3>cc00014</h3><img alt="900x350" src="http://192.168.6.27/render?from=-10days&until=now&width=900&height=350&_salt=1384090293.577&target=sumSeries(14w.*.LOCAL_BAND_OUT)&target=sumSeries(14w.*.LOCAL_BAND_IN)&areaMode=first&colorList=green%2Cblue&_uniq=0.08849347406066954" />
+	    <h3>cc00046</h3><img alt="800x300" src="http://192.168.6.27/render?from=-10days&until=now&width=800&height=300&_salt=1384090293.577&target=sumSeries(46w.*.LOCAL_BAND_OUT)&target=sumSeries(46w.*.LOCAL_BAND_IN)&areaMode=first&colorList=green%2Cblue&_uniq=0.08849347406066954" />
+	    <h3>cc00069</h3><img alt="800x300" src="http://192.168.6.27/render?from=-10days&until=now&width=800&height=300&_salt=1384090293.577&target=sumSeries(69w.*.LOCAL_BAND_OUT)&target=sumSeries(69w.*.LOCAL_BAND_IN)&areaMode=first&colorList=green%2Cblue&_uniq=0.08849347406066954" />
+	  </div>
+	</div>
+	<div class="span6">
+	    <div class="hero-unit">
+	    <h3>cc00014</h3><img src="http://192.168.6.27/render?from=-10days&until=now&width=800&height=300&_salt=1384090293.577&target=sumSeries(14w.*.LOCAL_BAND_OUT)&target=sumSeries(14w.*.LOCAL_BAND_IN)&areaMode=first&colorList=green%2Cblue&_uniq=0.08849347406066954" />
+	    <h3>cc00046</h3><img alt="800x300" src="http://192.168.6.27/render?from=-10days&until=now&width=800&height=300&_salt=1384090293.577&target=sumSeries(46w.*.LOCAL_BAND_OUT)&target=sumSeries(46w.*.LOCAL_BAND_IN)&areaMode=first&colorList=green%2Cblue&_uniq=0.08849347406066954" />
+	    <h3>cc00069</h3><img alt="800x300" src="http://192.168.6.27/render?from=-10days&until=now&width=800&height=300&_salt=1384090293.577&target=sumSeries(69w.*.LOCAL_BAND_OUT)&target=sumSeries(69w.*.LOCAL_BAND_IN)&areaMode=first&colorList=green%2Cblue&_uniq=0.08849347406066954" />
+	    </div>
+	</div>
+	</div>
+	</div>
+
+		
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="/static/bootstrap-select.min.js "></script>
+<script type="text/javascript">
+	$('.selectpicker').selectpicker();
+	$('.selectpicker').selectpicker('val',$('.selectpicker').attr('value'));
+	console.log('val')
+</script>
+</body>
+</html>
