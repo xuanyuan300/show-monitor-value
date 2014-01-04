@@ -1,4 +1,5 @@
 ﻿#!/usr/bin/python
+#coding utf-8
 import urllib2
 import json
 #dict={}
@@ -30,6 +31,22 @@ def main14st(searchnum):
 	for i in l1:
 		dictst[i.split(' ')[0]]=i.split(' ')[1]
 	return dictst
+def mainip(searchnum):
+	dictip={}
+	s1=urllib2.urlopen('http://cop.chinacache.com/devman/list/%s' %searchnum).read()
+        a1=json.loads(s1)
+        l1=map(lambda i:str(i['name'])+" "+str(i['ip']) ,a1['devInfo'])
+	for i in l1:
+		dictip[i.split(' ')[0]]=i.split(' ')[1]
+	return dictip
+def mainmrtg(searchnum):
+	dictmrtg={}
+        s1=urllib2.urlopen('http://cop.chinacache.com/devman/list/%s' %searchnum).read()
+        a1=json.loads(s1)
+        l1=map(lambda i:str(i['name'])+" "+i['mrtg'] ,a1['devInfo'])
+        for i in l1:
+                dictmrtg[i.split(' ')[0]]=i.split(' ')[1]
+        return dictmrtg
 def mainnew(searchnum):
         dictnew={}
         s1=urllib2.urlopen('http://cop.chinacache.com/devman/list/%s' %searchnum).read()

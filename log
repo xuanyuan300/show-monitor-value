@@ -415,3 +415,193 @@ ValueError: View function did not return a response
 192.168.3.35 - - [01/Jan/2014 23:56:05] "GET /newimg HTTP/1.1" 200 -
 192.168.3.35 - - [01/Jan/2014 23:56:05] "GET /static/bg.jpg HTTP/1.1" 304 -
 192.168.3.35 - - [02/Jan/2014 00:00:15] "POST /search HTTP/1.1" 200 -
+192.168.3.35 - - [02/Jan/2014 10:03:39] "GET / HTTP/1.1" 200 -
+192.168.3.35 - - [02/Jan/2014 10:03:41] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.3.35 - - [02/Jan/2014 10:04:05] "GET / HTTP/1.1" 200 -
+192.168.3.35 - - [02/Jan/2014 10:04:08] "GET /all14 HTTP/1.1" 200 -
+192.168.3.35 - - [02/Jan/2014 10:04:08] "GET /static/jquery.tablesorter.min.js HTTP/1.1" 304 -
+192.168.3.35 - - [02/Jan/2014 10:04:08] "GET /static/jquery.tablecloth.js HTTP/1.1" 304 -
+192.168.3.35 - - [02/Jan/2014 10:05:11] "POST /search HTTP/1.1" 200 -
+192.168.3.35 - - [02/Jan/2014 10:05:17] "GET /newimg HTTP/1.1" 200 -
+192.168.3.35 - - [02/Jan/2014 10:23:31] "GET /newimg HTTP/1.1" 200 -
+192.168.3.35 - - [02/Jan/2014 16:20:30] "GET / HTTP/1.1" 200 -
+192.168.3.35 - - [02/Jan/2014 16:20:30] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.3.35 - - [02/Jan/2014 16:20:34] "GET /newimg HTTP/1.1" 200 -
+192.168.3.35 - - [02/Jan/2014 16:20:49] "GET / HTTP/1.1" 200 -
+192.168.3.35 - - [02/Jan/2014 16:20:50] "GET / HTTP/1.1" 200 -
+192.168.3.35 - - [02/Jan/2014 16:20:53] "GET /all14 HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:48:37] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:48:38] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 09:48:40] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:49:05] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:49:07] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:49:11] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:49:11] "GET /static/bg.jpg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:49:13] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:49:13] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:49:13] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:49:20] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:50:45] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:50:45] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 09:50:45] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:55:00] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:55:00] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 09:55:02] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:55:09] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:55:09] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 09:56:12] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:56:12] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 09:56:18] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:56:18] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 09:56:18] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:58:13] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:58:25] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:58:31] "GET /newimg HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/lib64/python2.6/SocketServer.py", line 283, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib64/python2.6/SocketServer.py", line 309, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib64/python2.6/SocketServer.py", line 322, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib64/python2.6/SocketServer.py", line 618, in __init__
+    self.finish()
+  File "/usr/lib64/python2.6/SocketServer.py", line 661, in finish
+    self.wfile.flush()
+  File "/usr/lib64/python2.6/socket.py", line 303, in flush
+    self._sock.sendall(buffer(data, write_offset, buffer_size))
+error: [Errno 32] Broken pipe
+192.168.1.72 - - [03/Jan/2014 09:58:42] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:58:42] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 09:58:46] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 09:58:48] "GET /all14 HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:58:49] "GET /static/jquery.tablesorter.min.js HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:58:49] "GET /static/jquery.tablecloth.js HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:58:49] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 09:58:54] "GET /static/favicon.ico HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:58:54] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 09:58:56] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 10:01:54] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:01:54] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:01:57] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 10:02:02] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:02:03] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:10:34] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:10:36] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 10:11:50] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:11:50] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:12:04] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:12:04] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:12:07] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:13:27] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:16:58] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:16:58] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:25:11] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:25:11] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:31:53] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:31:53] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:32:26] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:32:26] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:32:58] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:32:58] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:33:16] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:33:17] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:35:00] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:35:00] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:35:39] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:35:39] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:40:21] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:40:21] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:41:35] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:41:36] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:41:56] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:41:56] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:48:27] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:48:27] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:50:11] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:50:11] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 10:50:25] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 10:50:26] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 11:02:10] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:02:10] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 11:02:44] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:02:44] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 11:03:10] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:03:11] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 11:04:04] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:04:05] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 11:04:25] "GET /newimg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:04:26] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 11:33:42] "GET /14 HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:33:45] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:34:03] "POST /search HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:34:04] "GET /search HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1566, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+192.168.1.72 - - [03/Jan/2014 11:34:34] "POST /search HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:34:35] "GET /search HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1478, in full_dispatch_request
+    response = self.make_response(rv)
+  File "/usr/lib/python2.6/site-packages/flask/app.py", line 1566, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+192.168.1.72 - - [03/Jan/2014 11:34:43] "POST /search HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:35:31] "POST /search HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:35:32] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 11:35:47] "POST /search HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:35:48] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 11:37:05] "POST /search HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:37:05] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 11:37:49] "POST /search HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:37:49] "GET /static/bg.jpg HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 11:42:35] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:45:58] "POST /search HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 11:45:58] "GET /static/bg.jpg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 12:02:11] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 12:02:27] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 12:02:29] "GET /all14 HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 12:02:29] "GET /static/jquery.tablesorter.min.js HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 12:02:29] "GET /static/jquery.tablecloth.js HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 12:02:50] "GET /static/favicon.ico HTTP/1.1" 304 -
+192.168.1.72 - - [03/Jan/2014 13:34:15] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 13:34:15] "GET /static/bg.jpg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 13:34:23] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 13:34:23] "GET /static/bg.jpg HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 17:34:48] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 17:34:51] "GET /favicon.ico HTTP/1.1" 404 -
+192.168.1.72 - - [03/Jan/2014 17:35:31] "GET / HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 17:38:41] "GET /all14 HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 17:38:54] "GET /14/CHN-ST-H-39e HTTP/1.1" 200 -
+192.168.1.72 - - [03/Jan/2014 17:40:18] "GET /69/CHT-TW-3-3g4 HTTP/1.1" 200 -
+ * Detected change in '/root/flask/device.py', reloading
+----------------------------------------
+Exception happened during processing of request from ('192.168.1.72', 1719)
+----------------------------------------
+ * Restarting with reloader
+ * Detected change in 'hello.py', reloading
+ * Restarting with reloader
+  File "hello.py", line 64
+    dev showdevlist69():
+      ^
+SyntaxError: invalid syntax

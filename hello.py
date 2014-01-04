@@ -1,7 +1,7 @@
 ﻿from flask import Flask
 from flask import render_template
 from flask import request
-from device import main14name,main14sn,main14st,mainnew
+from device import main14name,main14sn,main14st,mainnew,mainip,mainmrtg
 app=Flask(__name__)
 @app.route('/')
 #@app.route('/<ip>')
@@ -59,6 +59,14 @@ def showdev69():
 	cs69=[i for i in stn69.values() if i == "CLOSE"]
 	csd69=[k for k,v in stn69.items() if v == "CLOSE"]
 	return render_template('showdevall69.html',devs69=devs69,devss69=devss69,devsv69=devsv69,sn69=main14sn(68940),lens69=lens69,lenss69=lenss69,dn69=dn69,opn69=len(op69),spn69=len(sp69),csn69=len(cs69),spd69=spd69,csd69=csd69)
+
+@app.route('/devicelist69')
+def showdevlist69():
+	devs69=main14name(68940)
+	ips69=mainip(68940)
+	mrtgs69=mainmrtg(68940)
+	sts69=main14st(68940)
+	return render_template('showdevlist69.html',devs69=devs69,ips69=ips69,sts69=sts69,mrtgs69=mrtgs69)
 
 @app.route('/14/<name14>')
 def showip14(name14):

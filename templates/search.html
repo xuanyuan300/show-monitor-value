@@ -44,11 +44,8 @@
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span8">
-	  <div class="hero-unit">
-	    <h2>Server Group Bandwidth</h2>
 	    <div id="{{sv}}" style='min-width: 400px; height: 400px; margin: 0 auto'></div>
 	    {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
-	  </div>
 	</div>
 		
 </div>
@@ -111,7 +108,7 @@ function setBandwidthData(inData, outData,inte,outte){
 //            spacingRight: 20
         },
         title: {
-            text: name
+            text: "{{sv|safe}}"
         },
         xAxis: {
             type: 'datetime',
